@@ -16,6 +16,10 @@
             --white: #ffffff;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -79,12 +83,13 @@
             color: var(--accent-red);
         }
 
-        /* Hero Section */
+        /* Hero Section - Pure CSS Gradient */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--text-light);
             padding: 90px 5% 80px;
             text-align: center;
+            border-bottom: 2px solid var(--accent-red);
         }
 
         .hero h1 {
@@ -92,15 +97,16 @@
             font-weight: 800;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero .tagline {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--accent-red);
             font-weight: 700;
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .hero p {
@@ -124,6 +130,8 @@
             text-decoration: none;
             font-weight: 700;
             transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
@@ -250,6 +258,49 @@
             font-size: 0.95rem;
         }
 
+        /* Formspree Registration Form Section */
+        .form-section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent-red);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-navy);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--secondary-dark);
+            background-color: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            background-color: var(--white);
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-navy);
@@ -284,7 +335,7 @@
     <!-- Top Announcement Bar -->
     <div class="announcement-bar">
         🏉 Free High School Touch Rugby | Every Wednesday 2:00 PM – 4:00 PM in Greenville, TX 
-        <a href="#high-school">Sign Up Now &rarr;</a>
+        <a href="#register">Sign Up Now &rarr;</a>
     </div>
 
     <!-- Navigation Header -->
@@ -292,8 +343,9 @@
         <div class="logo">Greenville <span>RFC</span></div>
         <nav>
             <a href="#high-school">High School Rugby</a>
-            <a href="#rooks-adult">Rooks Rugby (Adults)</a>
+            <a href="#rooks-adult">Rooks Rugby</a>
             <a href="#facility">Our Field</a>
+            <a href="#register">Sign Up</a>
         </nav>
     </header>
 
@@ -301,11 +353,11 @@
     <section class="hero">
         <h1>Greenville Rugby Football Club</h1>
         <div class="tagline">Home of the Rooks</div>
-        <p>Building character, faith, and athletic excellence through the sport of rugby in Greenville, Texas.</p>
+        <p>Building character, faith, and athletic excellence through rugby in Greenville, Texas.</p>
         <div class="btn-group">
-            <a href="#high-school" class="btn btn-primary">High School Touch Rugby</a>
-            <a href="#summer-7s" class="btn btn-secondary">Summer 2027 HS 7s</a>
-            <a href="#rooks-adult" class="btn btn-secondary">Adult Rooks Roster</a>
+            <a href="#register" class="btn btn-primary">High School Touch Sign-Up</a>
+            <a href="#register" class="btn btn-secondary">Summer 2027 HS 7s Interest</a>
+            <a href="#register" class="btn btn-secondary">Adult Rooks Roster</a>
         </div>
     </section>
 
@@ -334,7 +386,7 @@
                     </div>
                     <p class="description">Join us every Wednesday for fast-paced, non-contact touch rugby. Designed for all skill levels to build conditioning, ball handling, and team camaraderie.</p>
                 </div>
-                <a href="#register-touch" class="btn btn-primary" style="text-align: center;">Register for Wednesday Touch</a>
+                <a href="#register" class="btn btn-primary" style="text-align: center;">Register for Wednesday Touch</a>
             </div>
 
             <!-- Summer 2027 7s Card -->
@@ -348,21 +400,61 @@
                     </div>
                     <p class="description">We are building our inaugural roster for competitive High School Boys and Girls 7s team competition launching in Summer 2027. Lock in your spot early!</p>
                 </div>
-                <a href="#register-7s" class="btn btn-secondary" style="text-align: center; color: var(--primary-navy); border-color: var(--primary-navy);">Sign Up for 2027 Squad</a>
+                <a href="#register" class="btn btn-secondary" style="text-align: center; color: var(--primary-navy); border-color: var(--primary-navy);">Sign Up for 2027 Squad</a>
             </div>
 
         </div>
 
         <!-- Adult Division -->
-        <h2 class="section-title" id="rooks-adult">Adult Senior Club: Rooks Rugby</h2>
+        <h2 class="section-title" id="rooks-adult">Adult Senior Club</h2>
         <div class="grid">
             <div class="card" style="grid-column: 1 / -1;">
                 <div>
                     <h3>Rooks Rugby (Greenville RFC)</h3>
                     <p class="description">Rooks Rugby is our adult program for men and women in Greenville and the surrounding East Texas region. Whether you are brand new to the sport wanting to try something new, or an experienced rugby player moving into the area looking for a home club, we welcome you to the squad.</p>
                 </div>
-                <a href="#rooks-interest" class="btn btn-primary" style="display: inline-block; text-align: center; max-width: 280px;">Join the Rooks Player List</a>
+                <a href="#register" class="btn btn-primary" style="display: inline-block; text-align: center; max-width: 280px;">Join the Rooks Player List</a>
             </div>
+        </div>
+
+        <!-- Registration Form Section -->
+        <h2 class="section-title" id="register">Player Sign-Up & Interest Form</h2>
+        <div class="form-section">
+            <form action="https://formspree.io/f/xppwrler" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(469) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program Interest *</label>
+                    <select id="program" name="program" required>
+                        <option value="" disabled selected>Select a program...</option>
+                        <option value="Wednesday High School Touch Rugby">Wednesday High School Touch Rugby (Active Now)</option>
+                        <option value="High School 7s (Summer 2027)">High School Boys & Girls 7s (Summer 2027)</option>
+                        <option value="Rooks Rugby Adult Senior Team">Rooks Rugby (Adult Senior Club)</option>
+                        <option value="General Volunteer / Supporter">General Supporter / Volunteer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Questions or Additional Notes</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Let us know about your athletic background or any questions you have..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 14px;">Submit Registration</button>
+            </form>
         </div>
 
     </div>
