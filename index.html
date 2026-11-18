@@ -1,490 +1,1292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greenville Rugby Football Club | Home of the Rooks</title>
-    <style>
-        :root {
-            --primary-navy: #0f172a;
-            --secondary-dark: #1e293b;
-            --accent-red: #c53030;
-            --accent-hover: #9b2c2c;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --bg-light: #f1f5f9;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenville RFC | The Rooks - High School 7s &amp; Hunt County Rugby</title>
+  <meta name="description" content="Official home of Greenville Rugby Football Club (The Rooks) in Hunt County, Texas. Featuring High School Competitive 7s, GHA Speed Pass Touch Rugby, and Saturday Adult Touch.">
+  <link rel="preconnect" href="[suspicious link removed]">
+  <link rel="preconnect" href="[suspicious link removed]" crossorigin>
+  <link href="[suspicious link removed]" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #9B111E;       /* Rooks Crimson / Cardinal */
+      --primary-dark: #6e0c15;
+      --primary-light: #b81d2c;
+      --secondary: #1a1a1a;     /* Pitch Charcoal / Black */
+      --secondary-light: #2d2d2d;
+      --accent: #D4AF37;        /* Gold / Brass */
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --light-bg: #f8f9fa;
+      --white: #ffffff;
+      --text: #2b2b2b;
+      --text-muted: #5c626b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+      --shadow-md: 0 6px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.14);
+      --radius: 8px;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--secondary-dark);
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background-color: var(--light-bg);
+      line-height: 1.6;
+    }
 
-        /* Top Announcement Bar */
-        .announcement-bar {
-            background-color: var(--accent-red);
-            color: var(--text-light);
-            text-align: center;
-            padding: 10px 15px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
+    h1, h2, h3, h4 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
 
-        .announcement-bar a {
-            color: var(--white);
-            text-decoration: underline;
-            margin-left: 8px;
-        }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
 
-        /* Header / Nav */
-        header {
-            background-color: var(--primary-navy);
-            padding: 18px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--accent-red);
-        }
+    a:hover {
+      color: var(--primary-dark);
+    }
 
-        .logo {
-            color: var(--text-light);
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .logo span {
-            color: var(--accent-red);
-        }
+    /* 1. TOP ANNOUNCEMENT BAR */
+    .announcement-bar {
+      background-color: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+    .announcement-bar a {
+      color: #ffe6aa;
+      text-decoration: underline;
+      margin-left: 8px;
+    }
 
-        nav a:hover {
-            color: var(--accent-red);
-        }
+    .announcement-bar a:hover {
+      color: var(--white);
+    }
 
-        /* Hero Section - Pure CSS Gradient */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--text-light);
-            padding: 90px 5% 80px;
-            text-align: center;
-            border-bottom: 2px solid var(--accent-red);
-        }
+    /* 2. HEADER & NAVIGATION */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
 
-        .hero .tagline {
-            font-size: 1.4rem;
-            color: var(--accent-red);
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
+    .logo-crest-placeholder {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-sm);
+    }
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 26px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
+    .logo-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--secondary);
+      letter-spacing: 0.8px;
+    }
 
-        .btn-primary {
-            background-color: var(--accent-red);
-            color: var(--text-light);
-        }
+    .logo-subtitle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+    }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      align-items: center;
+    }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--text-light);
-        }
+    nav a {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
 
-        .btn-secondary:hover {
-            background-color: var(--text-light);
-            color: var(--primary-navy);
-        }
+    nav a:hover {
+      color: var(--primary);
+    }
 
-        /* Facility Banner */
-        .facility-banner {
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            padding: 25px 5%;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .nav-cta {
+      background-color: var(--primary);
+      color: var(--white) !important;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 700 !important;
+      transition: all 0.3s ease;
+    }
 
-        .facility-badge {
-            background-color: #d97706;
-            color: var(--primary-navy);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
+    .nav-cta:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
 
-        .facility-banner h3 {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-        }
+    /* 3. HERO SECTION */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(20,20,20,0.92) 0%, rgba(45,45,45,0.85) 100%),
+                  radial-gradient(circle at top right, rgba(155,17,30,0.35), transparent 70%);
+      background-color: var(--secondary);
+      color: var(--white);
+      padding: 90px 0 80px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
 
-        .facility-banner p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
+    .hero-badge {
+      display: inline-block;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent);
+      color: #ffe89e;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
 
-        /* Content Container */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--primary-navy);
-            position: relative;
-        }
+    .hero-motto {
+      font-size: 1.35rem;
+      font-weight: 600;
+      font-style: italic;
+      color: #e5b947;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
 
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-red);
-            display: block;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
+    .hero-lead {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      font-size: 1.15rem;
+      color: #d1d5db;
+      line-height: 1.7;
+    }
 
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
 
-        .card {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-top: 4px solid var(--primary-navy);
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.25s ease;
+    }
 
-        .card.featured {
-            border-top: 4px solid var(--accent-red);
-        }
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(155, 17, 30, 0.45);
+    }
 
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-navy);
-        }
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(155, 17, 30, 0.6);
+      color: var(--white);
+    }
 
-        .card .details {
-            margin-bottom: 20px;
-        }
+    .btn-accent {
+      background-color: var(--accent);
+      color: var(--secondary);
+      font-weight: 800;
+    }
 
-        .card .details p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
+    .btn-accent:hover {
+      background-color: #e5be47;
+      transform: translateY(-2px);
+      color: var(--secondary);
+    }
 
-        .card .details strong {
-            color: var(--primary-navy);
-        }
+    .btn-outline {
+      background-color: transparent;
+      border-color: rgba(255,255,255,0.7);
+      color: var(--white);
+    }
 
-        .card p.description {
-            color: #475569;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
+    .btn-outline:hover {
+      border-color: var(--white);
+      background-color: rgba(255,255,255,0.1);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
 
-        /* Registration & Form Section */
-        .form-section {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 40px 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--accent-red);
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
+    /* 4. FACILITY BANNER */
+    .facility-banner {
+      background: linear-gradient(90deg, #1f2937, #111827);
+      color: var(--white);
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        .google-form-box {
-            background-color: #f8fafc;
-            border: 2px dashed var(--accent-red);
-            border-radius: 8px;
-            padding: 25px 20px;
-            text-align: center;
-            margin-bottom: 35px;
-        }
+    .facility-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    .facility-text {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .form-group label {
-            display: block;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--primary-navy);
-            font-size: 0.95rem;
-        }
+    .facility-icon {
+      font-size: 1.8rem;
+    }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-            color: var(--secondary-dark);
-            background-color: #f8fafc;
-        }
+    .facility-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffe6aa;
+    }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-red);
-            background-color: var(--white);
-        }
+    .facility-sub {
+      font-size: 0.88rem;
+      color: #9ca3af;
+    }
 
-        /* Footer */
-        footer {
-            background-color: var(--primary-navy);
-            color: var(--text-muted);
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .badge-tag {
+      background-color: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--accent);
+      color: #ffe89e;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
 
-        footer p {
-            margin-bottom: 10px;
-        }
+    /* SECTION BASICS */
+    section {
+      padding: 80px 0;
+    }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 50px;
+    }
+
+    .section-subtitle {
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* 5. FLAGSHIP: HIGH SCHOOL 7s */
+    .flagship-section {
+      background-color: var(--white);
+      position: relative;
+    }
+
+    .flagship-card {
+      background: linear-gradient(145deg, #ffffff, #fdfbfa);
+      border: 3px solid var(--primary);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flagship-ribbon {
+      position: absolute;
+      top: 24px;
+      right: -38px;
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 45px;
+      transform: rotate(45deg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .flagship-content h3 {
+      font-size: 2.1rem;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .flagship-subhead {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .flagship-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .feature-check {
+      background-color: rgba(155, 17, 30, 0.12);
+      color: var(--primary);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .callout-box {
+      background-color: #fff9e6;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 28px;
+      font-size: 0.92rem;
+      color: #6c5409;
+    }
+
+    .callout-box strong {
+      color: #4a3902;
+    }
+
+    .flagship-pricing-panel {
+      background-color: var(--secondary);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 36px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .pricing-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .price-main {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .price-period {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    .price-alt {
+      background-color: rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      margin-bottom: 24px;
+    }
+
+    .kit-inclusions {
+      text-align: left;
+      font-size: 0.85rem;
+      color: #d1d5db;
+      margin-bottom: 28px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 18px;
+    }
+
+    .kit-inclusions li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+      margin-left: 18px;
+    }
+
+    /* 6. GHA SPEED PASS SECTION */
+    .gha-section {
+      background-color: #f1f4f9;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .badge-icon {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(155, 17, 30, 0.1);
+      color: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .info-card h3 {
+      font-size: 1.45rem;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+
+    .info-card-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .info-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    .meta-specs {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      background-color: var(--light-bg);
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .spec-val {
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    /* 7. ADULT SATURDAY TOUCH */
+    .adult-section {
+      background-color: var(--white);
+    }
+
+    .adult-banner-box {
+      background: linear-gradient(135deg, var(--secondary) 0%, #202428 100%);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 48px;
+      border-left: 6px solid var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .adult-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .adult-tag {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .adult-banner-box h3 {
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .adult-banner-box p {
+      color: #d1d5db;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .adult-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .adult-perk-item {
+      background-color: rgba(255,255,255,0.06);
+      padding: 14px 18px;
+      border-radius: 6px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .adult-perk-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .adult-perk-item span {
+      color: #9ca3af;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .adult-action-box {
+      background-color: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .adult-action-box h4 {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .adult-action-box p {
+      font-size: 0.88rem;
+      color: #9ca3af;
+      margin-bottom: 22px;
+    }
+
+    /* 8. CONTACT FORM (FORMSPREE) */
+    .contact-section {
+      background-color: var(--light-bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: var(--white);
+      padding: 44px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background-color: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(155, 17, 30, 0.15);
+      background-color: var(--white);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* 9. FOOTER */
+    footer {
+      background-color: var(--secondary);
+      color: #9ca3af;
+      padding: 50px 0 30px;
+      font-size: 0.88rem;
+      border-top: 3px solid var(--accent);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #d1d5db;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+      .flagship-grid,
+      .split-grid,
+      .adult-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-motto {
+        font-size: 1.15rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Top Announcement Bar -->
-    <div class="announcement-bar">
-        🏉 Free High School Touch Rugby | Every Wednesday 2:00 PM – 4:00 PM in Greenville, TX 
-        <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank">Sign Up Now &rarr;</a>
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <aside class="announcement-bar" aria-label="Club Announcements">
+    <span>🏉 <strong>Registration Open:</strong> High School 7s Competitive Season &amp; Saturday Adult Touch (Kicking Off January)</span>
+    <a href="#flagship-7s">Explore Programs &rarr;</a>
+  </aside>
+
+  <!-- 2. HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo-group" aria-label="Greenville RFC Home">
+        <div class="logo-crest-placeholder">♜</div>
+        <div class="logo-text">
+          <span class="logo-title">Greenville RFC</span>
+          <span class="logo-subtitle">Home of The Rooks</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#flagship-7s">High School 7s</a></li>
+          <li><a href="#gha-speedpass">GHA Speed Pass</a></li>
+          <li><a href="#adult-touch">Adult Touch (Jan)</a></li>
+          <li><a href="#facility">Pitch Grounds</a></li>
+          <li><a href="#contact" class="nav-cta">Register / Inquire</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Navigation Header -->
-    <header>
-        <div class="logo">Greenville <span>RFC</span></div>
-        <nav>
-            <a href="#high-school">High School Rugby</a>
-            <a href="#rooks-adult">Rooks Rugby</a>
-            <a href="#facility">Our Field</a>
-            <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank">Academy Sign-Up</a>
-            <a href="#register">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
+  <!-- 3. HERO (FLAGSHIP FOCUS) -->
+  <main>
     <section class="hero">
+      <div class="container">
+        <div class="hero-badge">Hunt County Amateur Athletic Non-Profit • 501(c)(3)</div>
         <h1>Greenville Rugby Football Club</h1>
-        <div class="tagline">Home of the Rooks</div>
-        <p>Building character, faith, and athletic excellence through rugby in Greenville, Texas.</p>
-        <div class="btn-group">
-            <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank" class="btn btn-primary">High School Academy Sign-Up</a>
-            <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank" class="btn btn-secondary">Summer 2027 HS 7s Interest</a>
-            <a href="#register" class="btn btn-secondary">Adult Rooks Roster / Inquiry</a>
+        <p class="hero-motto">"Hold the Line. Lift the Squad."</p>
+        <p class="hero-lead">
+          Building physical competence, spatial tactical intelligence, and moral character in East Texas. 
+          Featuring our flagship High School 7s travel circuit, GHA Speed Pass Touch Rugby, and Saturday morning Adult Touch.
+        </p>
+        <div class="hero-actions">
+          <a href="#flagship-7s" class="btn btn-primary">High School 7s (Featured)</a>
+          <a href="#adult-touch" class="btn btn-accent">Adult Touch (Jan Kickoff)</a>
+          <a href="#gha-speedpass" class="btn btn-outline">GHA Speed Pass</a>
         </div>
+      </div>
     </section>
 
-    <!-- Dedicated Facility Announcement -->
-    <section class="facility-banner" id="facility">
-        <span class="facility-badge">Facility Update</span>
-        <h3>Exclusive Rugby Pitch Secured in Greenville, TX</h3>
-        <p>We have officially secured land dedicated exclusively to rugby training, youth development, and future match play. Planning and construction are currently underway!</p>
-    </section>
-
-    <!-- Main Content Container -->
-    <div class="container">
-
-        <!-- High School Division -->
-        <h2 class="section-title" id="high-school">High School Division</h2>
-        <div class="grid">
-            
-            <!-- Wednesday Touch Card -->
-            <div class="card featured">
-                <div>
-                    <h3>Active Now: HS Touch Rugby</h3>
-                    <div class="details">
-                        <p><strong>Who:</strong> High School Athletes (Boys & Girls)</p>
-                        <p><strong>When:</strong> Every Wednesday | 2:00 PM – 4:00 PM</p>
-                        <p><strong>Where:</strong> Greenville, TX <em>(Location sent upon registration)</em></p>
-                    </div>
-                    <p class="description">Join us every Wednesday for fast-paced, non-contact touch rugby. Designed for all skill levels to build conditioning, ball handling, and team camaraderie.</p>
-                </div>
-                <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank" class="btn btn-primary" style="text-align: center;">Register for Academy / Touch</a>
-            </div>
-
-            <!-- Summer 2027 7s Card -->
-            <div class="card" id="summer-7s">
-                <div>
-                    <h3>Launching Summer 2027: HS 7s</h3>
-                    <div class="details">
-                        <p><strong>Programs:</strong> High School Boys & Girls Teams</p>
-                        <p><strong>Format:</strong> Competitive Olympic-style Rugby 7s</p>
-                        <p><strong>Target:</strong> Summer 2027 Tournament Circuit</p>
-                    </div>
-                    <p class="description">We are building our inaugural roster for competitive High School Boys and Girls 7s team competition launching in Summer 2027. Lock in your spot early!</p>
-                </div>
-                <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank" class="btn btn-secondary" style="text-align: center; color: var(--primary-navy); border-color: var(--primary-navy);">Sign Up for 2027 Squad</a>
-            </div>
-
+    <!-- 4. FACILITY BANNER -->
+    <div class="facility-banner" id="facility">
+      <div class="container facility-content">
+        <div class="facility-text">
+          <span class="facility-icon">📍</span>
+          <div>
+            <div class="facility-title">Dedicated Rugby Pitch Grounds Secured in Greenville, Texas</div>
+            <div class="facility-sub">Positioned directly across from Oak Creek Park • Certified regulation posts &amp; match grounds in progress</div>
+          </div>
         </div>
-
-        <!-- Adult Division -->
-        <h2 class="section-title" id="rooks-adult">Adult Senior Club</h2>
-        <div class="grid">
-            <div class="card" style="grid-column: 1 / -1;">
-                <div>
-                    <h3>Rooks Rugby (Greenville RFC)</h3>
-                    <p class="description">Rooks Rugby is our adult program for men and women in Greenville and the surrounding East Texas region. Whether you are brand new to the sport wanting to try something new, or an experienced rugby player moving into the area looking for a home club, we welcome you to the squad.</p>
-                </div>
-                <a href="#register" class="btn btn-primary" style="display: inline-block; text-align: center; max-width: 280px;">Join the Rooks Player List</a>
-            </div>
+        <div>
+          <span class="badge-tag">Hunt County Home Grounds</span>
         </div>
-
-        <!-- Registration & Contact Section -->
-        <h2 class="section-title" id="register">Registration & Quick Contact</h2>
-        <div class="form-section">
-            
-            <!-- Official Google Form Box -->
-            <div class="google-form-box">
-                <h3 style="color: var(--primary-navy); margin-bottom: 8px; font-size: 1.25rem;">Official High School Academy Sign-Up</h3>
-                <p style="color: #475569; margin-bottom: 18px; font-size: 0.95rem;">Ready to register an athlete for 12 months of high-performance development, CIPP insurance, and kept gear package?</p>
-                <a href="https://forms.gle/xFv1ffs42Q3Fpd8PA" target="_blank" class="btn btn-primary" style="font-size: 1.05rem; padding: 12px 28px;">Complete Google Form Sign-Up &rarr;</a>
-            </div>
-
-            <h3 style="color: var(--primary-navy); margin-bottom: 20px; font-size: 1.2rem; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 25px;">Quick Contact & General Inquiry</h3>
-            
-            <!-- Restored Formspree Contact Form -->
-            <form action="https://formspree.io/f/xppwrler" method="POST">
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(469) 000-0000" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="program">Program Interest *</label>
-                    <select id="program" name="program" required>
-                        <option value="" disabled selected>Select a program...</option>
-                        <option value="Wednesday High School Touch Rugby">Wednesday High School Touch Rugby (Active Now)</option>
-                        <option value="High School 7s (Summer 2027)">High School Boys & Girls 7s (Summer 2027)</option>
-                        <option value="Rooks Rugby Adult Senior Team">Rooks Rugby (Adult Senior Club)</option>
-                        <option value="General Volunteer / Supporter">General Supporter / Volunteer</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Questions or Additional Notes</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Let us know about your athletic background or any questions you have..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 14px;">Send Quick Message</button>
-            </form>
-        </div>
-
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Greenville Rugby Football Club Inc. | Home of the Rooks | Greenville, Texas</p>
-        <p>Faith • Character • Athletic Excellence</p>
-    </footer>
+    <!-- 5. FLAGSHIP DIVISION: HIGH SCHOOL 7s (MOST PROMINENT) -->
+    <section class="flagship-section" id="flagship-7s">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Premier Competitive Track</div>
+          <h2 class="section-title">High School Competitive 7s Academy</h2>
+          <p class="section-lead">
+            Olympic-style Rugby 7s for high school student-athletes (Grades 9–12) across Hunt County and surrounding areas.
+            Fast, dynamic, and open to homeschool, public, and private school athletes.
+          </p>
+        </div>
+
+        <div class="flagship-card">
+          <div class="flagship-ribbon">Featured</div>
+          <div class="flagship-grid">
+            <div class="flagship-content">
+              <h3>The 7s Travel Circuit Squad</h3>
+              <div class="flagship-subhead">High-Repetition Contact Competition &amp; Olympic Pathways</div>
+              <p class="flagship-desc">
+                Rugby 7s is one of the fastest-growing sports in the nation. Played on a full-sized pitch with 7 players per side, 
+                every athlete runs, passes, defends, and attacks in space. There are zero benchwarmers on a Rooks squad.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <span class="feature-check">✓</span>
+                  <span><strong>4 Texas Tournaments (TOLA Circuit):</strong> Compete across regional events (Dallas, Fort Worth, Austin) with 12–16 live competitive match reps.</span>
+                </li>
+                <li>
+                  <span class="feature-check">✓</span>
+                  <span><strong>Track-Tackling Safety Curriculum:</strong> Certified safe-falling mechanics (S.A.F.E. rolls), cheek-to-cheek head safety, and strict zero-tolerance enforcement against dangerous play.</span>
+                </li>
+                <li>
+                  <span class="feature-check">✓</span>
+                  <span><strong>The Merit Jersey Model:</strong> Athletes keep their custom sublimated training singlet, match shorts, socks, and gear backpack, while competing in club-owned match jerseys to eliminate annual kit bloat.</span>
+                </li>
+                <li>
+                  <span class="feature-check">✓</span>
+                  <span><strong>USA Rugby Sanctioned:</strong> Certified World Rugby/USA Rugby coaching with secondary participant medical coverage (CIPP).</span>
+                </li>
+              </ul>
+
+              <div class="callout-box">
+                <strong>Bonus Player Inclusions:</strong> Full-Contact High School 7s registration automatically includes <strong>100% free unrestricted entry</strong> into our local Greenville Summer Touch Series and weekly Wednesday training blocks.
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="#contact" class="btn btn-primary">Enroll for High School 7s &rarr;</a>
+                <a href="#gha-speedpass" class="btn" style="border: 1px solid var(--border); color: var(--secondary);">View Speed Pass Alternative</a>
+              </div>
+            </div>
+
+            <div class="flagship-pricing-panel">
+              <div class="pricing-tag">Official Registration</div>
+              <div class="price-main">$595</div>
+              <div class="price-period">Full Year Pass (Paid Upfront)</div>
+              
+              <div class="price-alt">
+                <strong>Or Monthly Option:</strong><br>
+                $55 / month (12-month auto-pay agreement)
+              </div>
+
+              <ul class="kit-inclusions">
+                <li>Full 4-Tournament TOLA Entry Dues Included</li>
+                <li>USA Rugby Player Medical CIPP Insurance</li>
+                <li>Full Kept Apparel Package (Singlet, Shorts, Socks)</li>
+                <li>Heavy-Duty Vented Cleat Backpack Included</li>
+                <li>Free Access to Wednesday Open Touch &amp; Summer Series</li>
+              </ul>
+
+              <a href="#contact" class="btn btn-accent" style="width: 100%;">Sign Up Online</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GHA SPEED PASS (NON-CONTACT TOUCH & SKILLS) -->
+    <section class="gha-section" id="gha-speedpass">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Multi-Sport Speed &amp; Conditioning</div>
+          <h2 class="section-title">GHA Speed Pass &amp; Touch Rugby</h2>
+          <p class="section-lead">
+            Partnered with <strong>Greenville Homeschool Athletics (GHA)</strong> to deliver elite sprint mechanics, 
+            spatial decision-making, and high-aerobic conditioning with 100% non-contact safety.
+          </p>
+        </div>
+
+        <div class="split-grid">
+          <!-- GHA Card -->
+          <div class="info-card">
+            <div>
+              <div class="info-card-header">
+                <div class="badge-icon">🏛️</div>
+                <div>
+                  <span class="info-card-tag">Official Partnership</span>
+                  <h3>Greenville Homeschool Athletics</h3>
+                </div>
+              </div>
+              <p>
+                Greenville RFC proudly serves as the title partner and uniform provider for the GHA Speed Pass Program. 
+                Designed for co-ed student-athletes (6th–12th grades), this program delivers dynamic field speed, agility, 
+                and hand-eye execution that directly enhances performance across basketball, cross-country, track, and field sports.
+              </p>
+              
+              <div class="meta-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Format</span>
+                  <span class="spec-val">100% Non-Contact (FIT Touch)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Ages</span>
+                  <span class="spec-val">Co-ed, 6th–12th Grades</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Dues</span>
+                  <span class="spec-val">$100 / Year (GHA Rate)</span>
+                </div>
+              </div>
+
+              <p style="font-size: 0.9rem; color: var(--text-muted);">
+                Includes kept sublimated singlet, match shorts, socks, backpack, and full coverage under GHA institutional insurance.
+              </p>
+            </div>
+
+            <div>
+              <!-- Outbound link to GHA Home Page -->
+              <a href="https://www.greenvillearchers.com/greenvillehomeschoolathletics/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+                Visit GHA Official Home Page &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Wednesday Touch & Labs Card -->
+          <div class="info-card">
+            <div>
+              <div class="info-card-header">
+                <div class="badge-icon">⚡</div>
+                <div>
+                  <span class="info-card-tag">Year-Round Engine</span>
+                  <h3>Wednesday Touch &amp; Performance Labs</h3>
+                </div>
+              </div>
+              <p>
+                Every Wednesday afternoon from 2:00 PM to 4:00 PM, Rooks coaches host open non-contact touch sessions in Greenville. 
+                This serves as our active recovery engine and skills incubator, integrating the three pillars of our curriculum:
+              </p>
+
+              <ul class="feature-list" style="margin-bottom: 20px;">
+                <li>
+                  <span class="feature-check">1</span>
+                  <span><strong>Forge (Speed Geometry):</strong> Sprint acceleration, deceleration angles, posture control, and spatial tracking.</span>
+                </li>
+                <li>
+                  <span class="feature-check">2</span>
+                  <span><strong>Flush (Recovery):</strong> Neuromuscular recovery, dynamic reciprocal inhibition, and hydration education.</span>
+                </li>
+                <li>
+                  <span class="feature-check">3</span>
+                  <span><strong>Focus (Mental Architecture):</strong> Leadership roundtables, character literature, and composure under pressure.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <a href="#contact" class="btn btn-outline" style="border-color: var(--secondary); color: var(--secondary); width: 100%;">
+                Join Wednesday Touch &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ADULT ROOKS RUGBY (JANUARY KICKOFF) -->
+    <section class="adult-section" id="adult-touch">
+      <div class="container">
+        <div class="adult-banner-box">
+          <div class="adult-grid">
+            <div>
+              <span class="adult-tag">Launching January • Saturdays in Greenville</span>
+              <h3>Adult Saturday Touch Rugby</h3>
+              <p>
+                Ready to dust off your boots or experience rugby for the very first time? Starting this January, 
+                Greenville RFC is launching weekly Saturday morning Adult Touch Rugby.
+              </p>
+              <p>
+                This program is built on international Federation of International Touch (FIT) rules—100% non-contact, 
+                high-aerobic running, and crisp ball movement. It provides the perfect, low-barrier environment to 
+                <strong>help brand-new players get acclimated without collision fear</strong> and 
+                <strong>bring former players back into the fray</strong> to shake off rust and rebuild pitch fitness.
+              </p>
+
+              <div class="adult-perks">
+                <div class="adult-perk-item">
+                  <strong>Zero Tackling or Collisions</strong>
+                  <span>Fast two-hand touch on the hips; ideal for conditioning, joint longevity, and multi-sport athletes.</span>
+                </div>
+                <div class="adult-perk-item">
+                  <strong>The "Third Half" Fellowship</strong>
+                  <span>Rebuilding the legendary camaraderie and brotherhood of amateur rugby in Hunt County.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="adult-action-box">
+              <h4>Get on the Saturday Roster</h4>
+              <p>Sessions begin Saturdays in January. Register your interest below to receive pitch locations and kickoff times.</p>
+              <a href="#contact" class="btn btn-accent" style="width: 100%;">Join the Adult Squad</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT & REGISTRATION FORM (FORMSPREE SECURE INTAKE) -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Connect With The Squad</div>
+          <h2 class="section-title">Registration &amp; General Inquiries</h2>
+          <p class="section-lead">
+            Have questions about High School 7s, the GHA Speed Pass, or joining our Saturday Adult Touch group? 
+            Submit your information below and our coaching staff will connect with you.
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Formspree Endpoint Integration: Zero Exposed Emails -->
+          <form action="https://formspree.io/f/xppwrler" method="POST">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name *</label>
+                <input type="text" id="full-name" name="name" required placeholder="Player or Parent Name">
+              </div>
+              <div class="form-group">
+                <label for="phone-number">Phone Number *</label>
+                <input type="tel" id="phone-number" name="phone" required placeholder="(903) 555-0123">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email-address">Email Address *</label>
+              <input type="email" id="email-address" name="_replyto" required placeholder="you@domain.com">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="program-choice">Program of Interest *</label>
+                <select id="program-choice" name="program" required>
+                  <option value="" disabled selected>Select a Program...</option>
+                  <option value="High School 7s (Competitive Contact)">High School 7s (Competitive Contact - Grades 9-12)</option>
+                  <option value="Adult Saturday Touch (January Kickoff)">Adult Saturday Touch (January Kickoff)</option>
+                  <option value="GHA Speed Pass (Non-Contact Co-ed)">GHA Speed Pass (Non-Contact Co-ed 6th-12th)</option>
+                  <option value="Wednesday Open Touch (2-4 PM)">Wednesday Open Touch (2:00 PM - 4:00 PM)</option>
+                  <option value="Corporate Sponsorship / Booster">Corporate Sponsorship / Community Booster</option>
+                  <option value="General Question">General Club Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="athlete-grade">Athlete Grade / Age Bracket</label>
+                <select id="athlete-grade" name="grade_or_age">
+                  <option value="Adult (18+)">Adult (18+)</option>
+                  <option value="High School (Grades 9-12)">High School (Grades 9–12)</option>
+                  <option value="Middle School (Grades 6-8)">Middle School (Grades 6–8)</option>
+                  <option value="Youth (Under 10)">Youth (Under 10)</option>
+                  <option value="Not Applicable">N/A (Sponsor or Supporter)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Message or Player Experience Details</label>
+              <textarea id="comments" name="message" rows="4" placeholder="Tell us about sports background, questions, or how you heard about The Rooks..."></textarea>
+            </div>
+
+            <!-- Anti-Spam Honeypot Field for Formspree -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1rem;">
+              Submit to Greenville RFC Coaching Staff &rarr;
+            </button>
+
+            <p class="form-note">
+              🔒 Inquiries are routed directly to club directors via our secure intake portal. You will receive a direct reply within 24–48 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-group" style="margin-bottom: 14px;">
+            <div class="logo-crest-placeholder" style="width: 36px; height: 36px; font-size: 1rem;">♜</div>
+            <div class="logo-text">
+              <span class="logo-title" style="color: var(--white); font-size: 1.05rem;">Greenville RFC</span>
+              <span class="logo-subtitle" style="color: var(--accent);">The Rooks</span>
+            </div>
+          </div>
+          <p>
+            Greenville Rugby Football Club is an incorporated Texas non-profit organization operating 
+            under 501(c)(3) tax-exempt amateur sports guidelines. Formed exclusively for charitable, educational, 
+            and character-building youth athletics in Hunt County, Texas.
+          </p>
+          <p style="color: #6b7280; font-size: 0.8rem;">
+            Affiliated with Greenville Homeschool Athletics (GHA) • USA Rugby Member Club
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Program Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#flagship-7s">High School Competitive 7s</a></li>
+            <li><a href="#gha-speedpass">GHA Speed Pass Touch</a></li>
+            <li><a href="#adult-touch">Adult Saturday Touch (Jan)</a></li>
+            <li><a href="#facility">Dedicated Pitch Grounds</a></li>
+            <li><a href="https://www.greenvillearchers.com/greenvillehomeschoolathletics/" target="_blank" rel="noopener noreferrer">GHA Archers Website &nearr;</a></li>
+            <li><a href="#contact">Contact / Registration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Home Pitch Grounds</h4>
+          <p>
+            <strong>Greenville RFC Grounds</strong><br>
+            Across from Oak Creek Park<br>
+            Greenville, Hunt County, TX
+          </p>
+          <p>
+            <strong>Wednesday Touch:</strong> 2:00 PM – 4:00 PM<br>
+            <strong>Adult Saturday Touch:</strong> Kickoff Jan 2027<br>
+            <strong>High School 7s:</strong> Tournament Season Schedule
+          </p>
+          <p style="color: var(--accent); font-weight: 700;">
+            "Hold the Line. Lift the Squad."
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026–2027 Greenville Rugby Football Club (The Rooks). All rights reserved. Built for community amateur athletics.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
+```
